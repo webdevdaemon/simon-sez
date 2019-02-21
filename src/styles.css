@@ -1,0 +1,291 @@
+div {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+button {
+  outline: none;
+  border: solid 5px white;
+  box-shadow: 5px 5px 2px #000;
+  transition: ease-in .4s all;
+}
+button:hover {
+  transform: scale(1.1);
+}
+button:active {
+  transition: none;
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.app-wrapper {
+  background: #444;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vmin;
+  width: 100vmin;
+  max-height: 900px;
+  max-width: 900px;
+}
+
+.simon {
+  display: block;
+  background: #000;
+  border: solid 3vmin black;
+  border-radius: 100%;
+  max-height: 900px;
+  min-height: 400px;
+  max-width: 900px;
+  min-width: 400px;
+  width: 100vmin;
+  height: 100vmin;
+  overflow: hidden;
+}
+
+.panel {
+  display: block;
+  width: 50%;
+}
+
+.red {
+  border-right: solid 1.5vmin black;
+  border-bottom: solid 1.5vmin black;
+  background: red;
+  opacity: .5;
+}
+
+.green {
+  border-bottom: solid 1.5vmin black;
+  border-left: solid 1.5vmin black;
+  background: rgba(0, 255, 0, 0.45);
+  opacity: .6;
+}
+
+.blue {
+  border-left: solid 1.5vmin black;
+  border-top: solid 1.5vmin black;
+  background: #5d81ec;
+  opacity: .5;
+}
+
+.yellow {
+  border-top: solid 1.5vmin black;
+  border-right: solid 1.5vmin black;
+  background: #ffff00;
+  opacity: .5;
+}
+
+.active {
+  opacity: 1;
+}
+
+.panel-row {
+  display: flex;
+  height: 50%;
+}
+
+.top {
+  flex-direction: row;
+}
+
+.bottom {
+  flex-direction: row-reverse;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  box-sizing: content-box;
+  background: #a5acaf;
+  border: solid 3vmin black;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: calc(900px/2.3);
+  min-height: calc(400px/2.3);
+  max-width: calc(900px/2.3);
+  min-width: calc(400px/2.3);
+  overflow: hidden;
+  position: absolute;
+  height: 45vmin;
+  width: 45vmin;
+  z-index: 100;
+}
+.center .unit-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  height: 33%;
+  max-height: calc((900px/2.3)/3);
+  min-height: calc((400px/2.3)/3);
+  max-width: calc(900px/2.3);
+  min-width: calc(400px/2.3);
+}
+.center .unit-label .label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+.center .unit-label .top {
+  font-size: 5vmin;
+  margin: 0 auto 1vmin auto;
+}
+.center .unit-label .bottom {
+  font-size: 10vmin;
+  margin: 0 auto;
+}
+.center .interface {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-height: calc(900px/2.3/3);
+  min-height: calc(400px/2.3/3);
+  max-width: calc(900px/2.3);
+  min-width: calc(400px/2.3);
+  height: 33%;
+  width: 100%;
+  padding: 0 1vmin;
+}
+.center .interface .ui-node {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto;
+}
+.center .interface .ui-node .ui-label {
+  font-family: 'helvetica', 'avenir', sans-serif;
+  font-weight: 900;
+  font-size: 2.5vmin;
+  margin: 0 auto;
+  padding: 0;
+}
+.center .interface .position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 0;
+}
+.center .interface .position .digits {
+  box-sizing: border-box;
+  display: block;
+  background: #000;
+  border: inset 3px #bbb;
+  border-radius: 5%;
+  color: red;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  font-size: 7vmin;
+}
+.center .interface .start-reset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+}
+.center .interface .start-reset button {
+  background: orangered;
+  display: block;
+  border-radius: 100%;
+  margin: 0 auto 1vmin auto;
+  padding: 0;
+  height: 10vmin;
+  width: 10vmin;
+  max-height: calc((900px/2.3)/7);
+  min-height: calc((400px/2.3)/4);
+  max-width: calc((900px/2.3)/7);
+  min-width: calc((400px/2.3)/4);
+}
+.center .interface .strict {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+}
+.center .interface .strict button {
+  background: darkslategray;
+  display: block;
+  border-radius: 100%;
+  margin: 0 auto 1vmin auto;
+  padding: 0;
+  height: 10vmin;
+  width: 10vmin;
+  max-height: calc((900px/2.3)/7);
+  min-height: calc((400px/2.3)/4);
+  max-width: calc((900px/2.3)/7);
+  min-width: calc((400px/2.3)/4);
+}
+.center .power-switch {
+  background: #000;
+  border: solid white 3px;
+  border-radius: 10vmin;
+  height: 7vmin;
+  width: 66%;
+}
+.center .power-switch .switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+.center .power-switch .switch .knob {
+  border-radius: 50%;
+  display: block;
+  height: 9vmin;
+  margin: -1.5vmin;
+  padding: 0;
+  width: 9vmin;
+  background: black;
+  color: white;
+}
+.center .power-switch .on {
+  justify-content: flex-end;
+}
+.center .power-switch .on .knob {
+  background: white;
+  border-color: black;
+  color: black;
+}

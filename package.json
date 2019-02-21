@@ -1,0 +1,19 @@
+{
+  "name": "simonsez-freecodecampcopm",
+  "version": "0.0.31",
+  "description": "my submission for the \n'Simon Game' project, as part of the Frontend Development Certification Curriculum.",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "async-watch": "1.1.29"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
